@@ -2,8 +2,8 @@ import pandas as pd
 from sklearn import preprocessing
 
 def get_data():
-    train_data = _load_data("data/UNSW_NB15_training-set.csv")
-    test_data = _load_data("data/UNSW_NB15_testing-set.csv")
+    train_data = _load_data("data/preprocessed_train_data.csv")
+    test_data = _load_data("data/preprocessed_test_data.csv")
 
     train_data = _preprocess_data(train_data)
     test_data = _preprocess_data(test_data)
@@ -15,7 +15,7 @@ def get_data():
 
 def _load_data(file_path):
     data = pd.read_csv(file_path)
-    data = data.drop(columns=["id", "attack_cat"])
+    data = data.drop(columns=["attack_cat"])
     return data
 
 def _preprocess_data(data):

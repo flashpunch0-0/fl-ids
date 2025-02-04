@@ -1,7 +1,7 @@
-version: '3.8'
+version: "3.8"
 services:
   server:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile.server
     volumes:
@@ -13,7 +13,7 @@ services:
     container_name: fl-ids-server
 
   client1:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile.client
     volumes:
@@ -27,7 +27,7 @@ services:
     container_name: fl-ids-client-1
 
   client2:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile.client
     volumes:
@@ -41,7 +41,7 @@ services:
     container_name: fl-ids-client-2
 
   client3:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile.client
     volumes:
@@ -56,4 +56,4 @@ services:
 
 networks:
   app-network:
-    driver: bridge
+    external: true
